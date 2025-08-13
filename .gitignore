@@ -1,0 +1,41 @@
+Chromaflow/
+
+# Временные файлы и кэши редакторов
+*.tmp
+*.bak
+*.swp
+*.cache
+.vscode/
+.idea/
+*.code-workspace
+
+# Логи
+*.log
+logs/
+debug/
+
+# Зависимости и инструменты (Aftman, Lune, Darklua)
+aftman.toml
+.lune/
+lune/
+build/
+node_modules/
+vendor/
+
+# Минифицированные или скомпилированные файлы
+*.min.lua
+*.min.luau
+*.bundle.lua
+*.bundle.luau
+
+# Локальные конфигурации
+*.local
+*.DS_Store
+
+# Документация и временные файлы сборки
+*.rblx
+*.rbxm
+*.rbxmx
+*.project.json
+out/
+dist/
