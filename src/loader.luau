@@ -34,6 +34,8 @@ local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
 local RootPart = Character:WaitForChild("HumanoidRootPart")
 
+local loadChromaflow = true; spawn(function() if loadChromaflow == true then Library:Notify({Title="Error",Description="Chromaflow already running",Time=1.2}); error("Already running") end end)
+
 -- Load Obsidian Library
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/deividcomsono/Obsidian/refs/heads/main/Library.lua"))()
 
