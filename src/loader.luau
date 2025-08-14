@@ -75,6 +75,8 @@ local Script = {
 -- UTILITY FUNCTIONS
 -- ========================================
 
+repeat task.wait(0.25) until game:IsLoaded();if game:GetService("CoreGui"):FindFirstChild("ObsidianModal") then Library:Notify({Title="Error",Description="Chromaflow already running",Time=1.2}) return end
+
 -- utils/notifications.lua
 local Notifications = {
     Success = function(title, description)
