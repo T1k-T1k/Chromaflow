@@ -37,6 +37,8 @@ local RootPart = Character:WaitForChild("HumanoidRootPart")
 -- Load Obsidian Library
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/deividcomsono/Obsidian/refs/heads/main/Library.lua"))()
 
+repeat task.wait(0.25) until game:IsLoaded();if game:GetService("CoreGui"):FindFirstChild("ObsidianModal") then Library:Notify({Title="Error",Description="Chromaflow already running",Time=1.2}) return end
+
 -- Global Variables
 local Script = {
     Name = "Obsidian Demo",
@@ -74,8 +76,6 @@ local Script = {
 -- ========================================
 -- UTILITY FUNCTIONS
 -- ========================================
-
-repeat task.wait(0.25) until game:IsLoaded();if game:GetService("CoreGui"):FindFirstChild("ObsidianModal") then Library:Notify({Title="Error",Description="Chromaflow already running",Time=1.2}) return end
 
 -- utils/notifications.lua
 local Notifications = {
