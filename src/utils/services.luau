@@ -1,16 +1,18 @@
-local Services = {}
+local cloneref = (cloneref or function(instance: any) return instance end)
 
-function Services:GetServices(serviceList)
-    for _, serviceName in pairs(serviceList) do
-        local success, service = pcall(function()
-            return game:GetService(serviceName)
-        end)
-        
-        if success then
-            shared[serviceName] = service
-        else
-            warn("[Chromaflow] Failed to load service: " .. serviceName)
-        end
+local Services = {}
+function Services:GetService(serviceName: string)
+    if shared[serviceName] then return shared[serviceName] end
+
+    local service = cloneref(game:GetService(serviceName))
+    shared[serviceName] = service
+
+    return service
+end
+
+function Services:GetServices(serviceNames: table)
+    for _, serviceName: string in ipairs(serviceNames) do
+        Services:GetService(serviceName)
     end
 end
 
